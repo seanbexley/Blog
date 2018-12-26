@@ -1,0 +1,40 @@
+body {
+    background: #333;
+    color: #fff;
+}
+
+.box {
+    background: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    animation: boxanimation;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes boxanimation {
+    0% {transform: rotateZ(0deg);}
+    100% {transform: rotatez(360deg);}
+}
+
+a {
+    background-color: rgb(129, 230, 243);
+    color: #fff;
+    font-size: 1.5em;
+    border: solid #fff 1px;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 3px 10px;
+}
+
+a:hover {
+    background: rgb(62, 168, 230);
+}
+
+pre { 
+    background: rgb(141, 141, 141);
+    color: #333;
+    overflow: scroll;
+ }
