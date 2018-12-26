@@ -1,0 +1,33 @@
+body {
+    background: #333;
+    color: #fff;
+}
+
+.box {
+    background: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    animation: boxanimation;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes boxanimation {
+    0% {transform: rotateZ(0deg);}
+    100% {transform: rotatez(360deg);}
+}
+
+a {
+    background: coral;
+    color: #fff;
+    font-size: 2em;
+    border-radius: 30%;
+}
+
+/* .box:hover {
+    background: red;
+    border-radius: 50%;
+    transform: rotateZ(360deg);
+} */
