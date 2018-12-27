@@ -88,11 +88,11 @@ body{
     width: 100%;
   }
   
-  /* @media(max-width:568px){
+   @media(max-width:568px){
     .navbar-nav{display:none}
   }
   
-  @media(min-width:568px){
+  /*@media(min-width:568px){
   }  */
   
   @media only screen and (min-width : 320px) {
