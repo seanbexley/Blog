@@ -98,7 +98,7 @@ body{
   @media only screen and (min-width : 320px) {
     #main{
       background:red;
-      width: 280px;
+      width: 260px;
     }
   }
   /* Extra Small Devices, Phones : 480px ~ */
