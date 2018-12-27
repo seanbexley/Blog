@@ -65,11 +65,19 @@ body{
     margin-left:50px;
   }
   
-  #main{
+  #main-title{
     transition:margin-left 0.5s;
     padding:20px;
     overflow:hidden;
-    width:100%;
+  }
+
+  #main{
+    padding:20px;
+    overflow:hidden;
+    background: #ccc;
+    width:568px;
+    height: 100%;
+    margin: auto;
   }
 
   .primary-text{
