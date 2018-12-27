@@ -98,14 +98,14 @@ body{
   @media only screen and (min-width : 320px) {
     #main{
       background:red;
-      width: 320px;
+      width: 300px;
     }
   }
   /* Extra Small Devices, Phones : 480px ~ */
   @media only screen and (min-width : 480px) {
     #main{
       background: yellow;
-      width: 460px;
+      width: 480px;
     }
   }
   /* Small Devices, Tablets : 768px ~ */
