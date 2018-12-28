@@ -95,7 +95,7 @@ body{
   /*@media(min-width:568px){
   }  */
   
-  @media only screen and (min-width : 320px) {
+  @media only screen and (max-width : 479px) {
     #main{
       width: 250px;
     }
