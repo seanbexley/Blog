@@ -43,6 +43,10 @@
       <h1><span class="primary-text">Sean</span>Bexley</h1>
       
     </div>
+
+    <div id="test-test">
+        <h1>Test</h1>
+    </div>
   
     <div id="main">
         <h1>My family</h1>
@@ -54,11 +58,13 @@
       function openSlideMenu(){
         document.getElementById('side-menu').style.width = '250px';
         document.getElementById('main-title').style.marginLeft = '250px';
+        document.getElementById('test-test').style.height = '0';
       }
   
       function closeSlideMenu(){
         document.getElementById('side-menu').style.width = '0';
         document.getElementById('main-title').style.marginLeft = '0';
+        document.getElementById('test-test').style.height = '100px';
       }
     </script>
 </body>
