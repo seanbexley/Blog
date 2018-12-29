@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>npm-crash</title>
+</head>
+<body>
+    <p>Created on 20181229</p>
+    <h1>What is NPM</h1>
+    <ul>
+        <li>Node Package Manaager</li>
+        <li>Pre-installed with Node.js</li>
+        <li>Easily install modules/packages on your system</li>
+        <li>Modules are basically JavaScript libraries</li>
+        <li>Makes it easy for developers to share & reuse codes</li>
+    </ul>
+
+    <br><br>
+    <a href="https://nodejs.org/en/">nodejs.org</a><br><br>
+    <a href="https://www.npmjs.com/">npmjs.com</a>
+    <br><br>
+
+    <pre>
+        <code>
+            // npm 버전확인
+            npm -v
+
+            npm init
+
+            // 시작시 설정 물어보지 않는다
+            npm --yes 
+            npm -y
+
+            // 설정
+            npm config set init-author-name "Sean Lee"
+            npm set init-license "MIT"
+
+            npm get init-author-name
+
+            // package.json 파일을 조사하여 depandency 를 설치한다
+            npm install
+
+            // --save 를 주면 package.json 에 설정을 저장한다
+            npm install lodash --save
+
+            // lodash 사용예
+            const _ = require('lodash');
+            const numbers = [33, 26, 15, 48, 56];
+            _.each(numbers, function(number, i){
+                console.log(number);
+            });
+
+            // Dev depandency
+            npm install gulp gulp-sass --save-dev
+
+            // Production depandency
+            npm install --production
+
+            // remove depandency
+            npm uninstall gulp-sass --save-dev
+            npm remove gulp --save-dev
+
+            // install certain version of depandency
+            npm install lodash@4.17.3 --save
+
+            // Update depandency
+            npm update lodash
+
+            // 버전앞에 붙는 ^4.17.4 : Latest minor version(버전표시의 가운데)
+            // 버전앞에 붙는 ~4.17.3 : Only update patch version(버전표시의 맨오른쪽)
+            // "*"" : Absolute latest version
+
+            // Nodemon 글로벌 설치 (live server 와 비슷)
+            npm install -g nodemon
+            npm install live-server -g
+
+            npm list
+            npm list --depth 0
+            npm list --depth 1
+            npm list --depth 2
+
+            // scripts
+            "scripts": {
+                "start" : "node index.js",
+                "server" : "live-server"
+            }
+
+            // scripts 에 start, test 등이 아니면 실행할때 npm run server 이런식으로 run 을 붙여야 한다
+            npm start  // 앱 실행
+            npm run server // 서버실행
+            
+        </code>
+    </pre>
+    
+</body>
+</html>
