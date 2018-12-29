@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Nodejs</title>
+</head>
+<body>
+    <h1>What is Node.js</h1>
+    <ul>
+        <li>JavaScript runtime built on Chrome's V8 JavaScript engine</li>
+        <li>JavaScript running on the server</li>
+        <li>Userd to build powerful, fast & scalable web applications</li>
+        <li>Users an event-driven, non-blocking I/O model</li>
+    </ul>
+
+    <h1>Popular modules</h1>
+    <ul>
+        <li>express - Web development framwork</li>
+        <li>Connect - Extensible HTTP server framwork</li>
+        <li>Socket.io - Server side component for websockets</li>
+        <li>Pug / Jade - Template engine inspired by HAML</li>
+        <li>Mongo / Mongoose - Wrappers to interact with MongoDB</li>
+        <li>Coffe-Script - CoffeeScript compiler</li>
+        <li>Redis - Redis client library</li>
+    </ul>
+    <br>
+
+    <h1>Crash code</h1>
+    <pre>
+        <code>
+            const http = require('http');
+            const fs = require('fs');
+
+            const hostname = '127.0.0.1';
+            const port = 3000;
+
+            fs.readFile('index.html', (err, html) => {
+                if(err) {
+                    throw err;
+
+                    const server = http.createServer((req, res) => {
+                        res.statusCode = 200;
+                        res.setHeader('Content-type', 'text/plain');
+                        res.write(html);
+                        res.end();
+                    });
+        
+                    serever.listen(port, hostname, () => {
+                        console.log('Server started on port ' + port);
+                    });
+                }
+            });            
+        </code>
+    </pre>
+</body>
+</html>

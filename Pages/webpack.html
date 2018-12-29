@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Webpack</title>
+</head>
+<body>
+    <h1>What is Webpack</h1>
+    <ul>
+        <li>Module Bundler</li>
+        <li>Custom files or NPM Installed</li>
+        <li>Generates Static Assets</li>
+        <li>Extend with Plugins & Loaders</li>
+        <li>각종 필요한 Depandency module 들을 하나의 파일로 묶어줌</li>
+    </ul>
+    
+    <h1>Process</h1>
+    <ul>
+        <li>Webpack 모듈 설치</li>
+        <li>app.js 작성</li>
+        <li>번들생성 - webpack app.js bunble.js</li>
+        <li>index.html 에서 import</li>
+    </ul>
+
+    <a href="https://github.com/bradtraversy/webpack_app">Sample codes</a>
+
+    <pre>
+        <code>
+            npm install -g Webpack
+
+            // To user the dev server
+            npm install Webpack-dev-server
+
+            // Bundling 
+            webpack app.js bundle.js
+
+            // Watch mode
+            webpack app.js bundle.js --watch
+
+            // install jQuery
+            npm install jquery --save
+            let $ = require('jquery');
+
+            // Loaders
+            npm install css-loader style-loader --save-dev
+
+            // CSS 가 JavaScript 파일에 include
+            require('!style-loader!css-loader!./style.css');
+
+            // 아니면
+            // webpack.config.js
+            module.exports = {
+                entiry: './src/js/app.js',
+                output: {
+                    path: __dirname + '/dist',
+                    filename: 'bundle.js'
+                },
+                module: {
+                    loaders:[
+                        {test: /\.css$/, loader: "style-loader!css-loader"},
+                        {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/, query:{presets:[es2015]}}
+                    ]
+                }
+            }
+
+            require('../css/style.css');
+
+            // 터미널 webpack 실행
+            webpack
+
+            // OR package.json 의 scripts 에서
+            "build" : "webpack"
+
+            "start" : "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js"
+            
+            npm install babel-core babel-loader babel-preset-es2015 --save-dev
+        </code>
+    </pre>
+</body>
+</html>
