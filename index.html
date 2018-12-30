@@ -53,9 +53,11 @@
         </ul>
     </div>
   
-    
-
     <script>
+      window.addEventListener('load', () => {
+        console.log('window loaded');
+      });
+
       function openSlideMenu(){
         document.getElementById('side-menu').style.width = '250px';
         document.getElementById('main-title').style.marginLeft = '250px';
