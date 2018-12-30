@@ -80,10 +80,9 @@ body{
     margin: auto;
   }
 
-  #test-test{
+  #blog-link{
       width: 100%;
-      height: 100px;
-      background: blueviolet;
+      background: rgb(233, 233, 233);
       transition: 1s;
   }
 
@@ -93,6 +92,16 @@ body{
 
   .image-main {
     width: 100%;
+  }
+
+  ul {
+    padding: 10px;
+    list-style: none;
+    font-size: 1.2em;
+  }
+
+  li {
+    margin-top: 10px;
   }
   
    @media(max-width:568px){
