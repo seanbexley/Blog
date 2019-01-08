@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+   
+    <div class="container">
+            Test materialize
+
+            <div class="row">
+                    <div class="col s12">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae accusantium exercitationem beatae saepe enim, quae aspernatur soluta ab non commodi impedit nesciunt est! Reprehenderit, iure dolore. Et reprehenderit laborum repellendus!</div>
+                    <div class="col s6 t1">6-columns (one-half) Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus molestiae ut sint ratione dicta sit doloremque eum sed omnis odit accusantium explicabo exercitationem, reiciendis itaque et provident incidunt at ipsum?</div>
+
+                    <div class="col s6 t2">6-columns (one-half)</div>
+
+                    <div class="col s6 offset-s6 t2"><span class="flow-text">6-columns (offset-by-6)</span></div>
+                  </div>
+    </div>
+
+    <div class="row">
+            <div class="col s12"><p>s12</p></div>
+            <div class="col s12 m4 l2"><p>s12 m4 l2</p></div>
+            <div class="col s12 m4 l8"><p>s12 m4 l8</p></div>
+            <div class="col s12 m4 l2"><p>s12 m4 l2</p></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row">
+                <div class="col s4"><p>s12 m4 l2</p></div>
+                <div class="col s4"><p>s12 m4 l8</p></div>
+                <div class="col s4"><p>s12 m4 l2</p></div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div style="height:200px;">
+                    <h5 class="center-align">This should be vertically aligned</h5>
+                  </div>
+
+    <div class="divider"></div>
+    
+    <div class="divider"></div>    
+    <div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-red-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+    <div class="divider"></div>
+     <!-- Modal Trigger -->
+     <button data-target="modal1" class="btn modal-trigger" onclick="GetModal()">Modal</button>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+
+    <div class="progress">
+            <div class="indeterminate"></div>
+    </div>
+
+    <!-- <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div> -->
+  </div>
+
+  <div style="height:100px;"></div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+        <form class="col s12">
+                <div class="row">
+                        <div class="col s12">
+                          This is an inline input field:
+                          <div class="input-field inline">
+                            <input id="email_inline" type="email" class="validate">
+                            <label for="email_inline">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                          </div>
+                        </div>
+                      </div>
+        </form>
+      </div>
+
+
+      <div style="height:100px;"></div>
+
+      <div class="container">
+            <div class="row">
+                    <div class="col s12 m5">
+                      <div class="card-panel teal">
+                        <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('onLoaded');
+    var elems = document.querySelectorAll('.modal');
+    console.log('elems -> ' + elems);
+    var options = {dismissible:false};
+    var instances = M.Modal.init(elems, options);
+
+  });
+
+  function GetModal(){
+    var elem = document.querySelector('#modal1');
+    console.log('Get M elems -> ' + elem);
+    var instance = M.Modal.getInstance(elem);
+    instance.open();
+    setTimeout(()=>{
+        instance.close();
+    }, 3000);
+  }
+</script>
+
+<style>
+    .container  {
+        background: rgb(219, 235, 200);
+    }
+
+    .s12  {
+        background: rgb(124, 151, 228);
+    }
+
+    .t1  {
+        background: #ccc;
+    }
+
+    .t2  {
+        background: rgb(233, 168, 168);
+    }
+</style>
+</html>

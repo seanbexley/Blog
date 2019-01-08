@@ -52,8 +52,26 @@
           <li><a href="Pages/webpack.html">webpack</a></li>
         </ul>
     </div>
+
+    <button onclick="ShowDiv()">Show</button>
+    <div id="test-div" class="test-div">
+        <p id="test-p" class="test-p">This is test text</p>
+      <!-- <p class="test-p">This is test p</p> -->
+    </div>
   
     <script>
+
+      function ShowDiv(){
+        console.log('ShowDiv');
+        var testDiv = document.getElementById('test-div');
+        testDiv.style.height = '100px';
+
+        setTimeout(() => {
+          console.log('timeout');
+          testDiv.style.height = '0px';
+        }, 1000);
+      }
+
       window.addEventListener('load', () => {
         console.log('window loaded');
       });
@@ -61,13 +79,11 @@
       function openSlideMenu(){
         document.getElementById('side-menu').style.width = '250px';
         document.getElementById('main-title').style.marginLeft = '250px';
-        document.getElementById('test-test').style.height = '0';
       }
   
       function closeSlideMenu(){
         document.getElementById('side-menu').style.width = '0';
         document.getElementById('main-title').style.marginLeft = '0';
-        document.getElementById('test-test').style.height = '100px';
       }
     </script>
 </body>

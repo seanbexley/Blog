@@ -43,6 +43,20 @@ body{
     padding-top:60px;
     transition:0.5s;
   }
+
+  .test-div {
+    background: red;
+    height: 0px;
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  .test-p {
+    background: #ccc; 
+    text-align: center;
+    display:block;
+    margin:0 auto;
+  }
   
   .side-nav a{
     padding:10px 10px 10px 30px;
