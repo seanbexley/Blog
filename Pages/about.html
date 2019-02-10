@@ -12,33 +12,54 @@
     <div id="main">
         <h1>About Sean Lee</h1>
 
-        <img class="image-main" src="../images/02.jpg" alt="img">
+        <div id="img-intro-div">
+                <img id="img-intro" src="../images/02.jpg" alt="img">
+        </div>
 
         <div class="about-text">
                 <p>안녕하세요. 이시현입니다.  웹개발, Node.js, React.js, Vue.js, 서버, ASP.NET, RDS, NoSQL, Unity3d, Game 등의 분야에 관심있는 개발자 입니다.</p>
         
-                <p>I am a web developer specializing mostly in JavaScript/ASP.NET CORE but also game developer with Unity3D C#.</p>
+                <p>I am a full stack web developer specializing mostly in JavaScript/ASP.NET Core but also develope game with Unity3D, C#.</p>
         </div>
         
     </div>
 </body>
 
 <style>
+body{
+    text-align: center;
+    font-family:"Arial", Serif;
+    background-color:#111;
+    overflow-x:hidden;
+  }
+
+#main {
+    display: inline-block;
+    width: 480px;
+}
+
 h1 {
     text-align: center;
     text-decoration: underline;
 }
 
 .about-text {
-    margin-left: 300px;
+    text-align: center;
+    width: 100%;
 }
 
-.image-main {
-    width: 200px;
-    height: 200px;
-    float: left;
-    border-radius: 50%; 
-    margin-left: 50px;
+#img-intro-div {
+    text-align: center;
   }
+
+#img-intro {
+width: 200px;
+height: 200px;
+border-radius: 50%; 
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;   
+margin-bottom: 50px;
+}
 </style>
 </html>
