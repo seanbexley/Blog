@@ -84,7 +84,7 @@ body{
     text-align: center;
     font-size: 12px;
   }
-  
+/*   
    @media(max-width:568px){
     .navbar-nav{display:none}
   }
@@ -94,27 +94,27 @@ body{
       width: 250px;
     }
   }
-  /* Extra Small Devices, Phones : 480px ~ */
+  
   @media only screen and (min-width : 480px) {
     #main{
       width: 480px;
     }
   }
-  /* Small Devices, Tablets : 768px ~ */
+  
   @media only screen and (min-width : 768px) {
     #main {
       width: 768px;
     }
   }
-  /* Medium Devices, Desktops : 992px ~ */
+  
   @media only screen and (min-width : 992px) {
     #main {
       width: 992px;
     }
   }
-  /* Large Devices, Wide Screens : 1200px ~ */
+  
   @media only screen and (min-width : 1200px) {
     #main {
       width: 1200px;
     }
-  }
+  } */
