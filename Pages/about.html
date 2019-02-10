@@ -14,7 +14,7 @@
     
         <div id="main" class="side-nav col-xs-12 col-sm-12 col-md-12 col-lg-12">
         
-            <h1>About Sean Lee</h1>
+            <h1 id="about-title">About Sean Lee</h1>
 
             <div id="img-intro-div">
                     <img id="img-intro" src="../images/02.jpg" alt="img">
@@ -26,7 +26,7 @@
                     <p>I am a full stack web developer specializing mostly in JavaScript/ASP.NET Core but also develope game with Unity3D, C#.</p>
             </div>
 
-            <p><a href="../index.html" style="color : blue">Home</a></p>
+            <div><a id="about-home" href="../index.html" style="color : blue">Home</a></div>
         </div>
     </div>
 
@@ -47,10 +47,13 @@ body{
     width: 480px;
 }
 
-h1 {
+#about-title {
     color: #fff;
     text-align: center;
-    text-decoration: underline;
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 10px;
+    /* text-decoration: underline; */
 }
 
 .about-text {
@@ -71,5 +74,12 @@ margin-right: auto;
 margin-top: 50px;   
 margin-bottom: 50px;
 } 
+
+#about-home {
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+}
 </style>
 </html>
