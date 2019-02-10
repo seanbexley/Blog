@@ -9,84 +9,115 @@
     <link rel="stylesheet" href="./css/flexboxgrid.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <!-- <h1>Seans Blog index</h1>
-    <a href="Pages/2018-12-26-gitcommands.html">Git commands</a> -->
-    <nav class="navbar">
-      <span class="open-slide">
-        <a href="#" onclick="openSlideMenu()">
-          <svg width="30" height="30">
-              <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-              <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-              <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
-          </svg>
-        </a>
-      </span>
-  
-      <ul class="navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="Pages/about.html">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  
-    <div id="side-menu" class="side-nav">
-      <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-      <a href="#">Home</a>
-      <a href="Pages/about.html">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </div>
-  
-    <div id="main-title">
-      <h1><span class="primary-text">Sean</span>Bexley blog</h1>
-      
+<body onresize="onResized()">
+    <!-- Blog's title -->
+    <div class="blog-title">
+        <h3>이시현의 블로그 입니다 (Sean Lee's blog)</h3>
+        <p id="device-width" style="font-size : 12px">dived width</p>
     </div>
 
-    <div id="blog-link">
-        <ul>
-          <li><a href="Pages/gitcommands.html">git commands</a></li>
-          <li><a href="Pages/nodejs.html">node.js</a></li>
-          <li><a href="Pages/npm.html">npm</a></li>
-          <li><a href="Pages/webpack.html">webpack</a></li>
-        </ul>
+    <div class="row">
+        
+      <div class="side-nav col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        
+        <!-- About Sean Lee -->
+        <a id="side-nav-title" href="Pages/about.html">About Sean Lee</a>
+        
+        <div class="devider"></div>
+
+        <!-- Blogs links -->
+        <div class="side-nav-bloglist">
+              
+            <button class="side-nav-blog-title"  onclick="onBlogClicked('git')">Git</button> <br/>
+            <button class="side-nav-blog-title"  onclick="onBlogClicked('nodejs')">Node.js</button> <br/>
+            <button class="side-nav-blog-title"  onclick="onBlogClicked('webdev')">Web Client</button> <br/>
+            <button class="side-nav-blog-title" onclick="onBlogClicked('dotnetcore')">.Net Core</button>
+
+        </div>
+      </div>
+
+      <div class="body-content col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div>
+
+          <!-- blog list -->
+          <div id="blog-link">
+              <ul id="blog-link-ul">
+                <!-- <li><a href="#"></a></li> -->
+              </ul>
+          </div>
+        
+        </div>  
+      </div>
+
     </div>
 
-    <button onclick="ShowDiv()">Show</button>
-    <div id="test-div" class="test-div">
-        <p id="test-p" class="test-p">This is test text</p>
-      <!-- <p class="test-p">This is test p</p> -->
+    
+    <div class="footer">
+      <h3>© 2019 SEAN LEE DEV LOG.</h3>
     </div>
   
-    <script>
 
-      function ShowDiv(){
-        console.log('ShowDiv');
-        var testDiv = document.getElementById('test-div');
-        testDiv.style.height = '100px';
-
-        setTimeout(() => {
-          console.log('timeout');
-          testDiv.style.height = '0px';
-        }, 1000);
-      }
-
-      window.addEventListener('load', () => {
-        console.log('window loaded');
-      });
-
-      function openSlideMenu(){
-        document.getElementById('side-menu').style.width = '250px';
-        document.getElementById('main-title').style.marginLeft = '250px';
-      }
-  
-      function closeSlideMenu(){
-        document.getElementById('side-menu').style.width = '0';
-        document.getElementById('main-title').style.marginLeft = '0';
-      }
-    </script>
 </body>
+<script>
+
+  window.onload = function() {
+    var width = window.innerWidth;
+  console.log('device width : ' + width);
+  var deviceWidthTxt = document.getElementById('device-width');
+  deviceWidthTxt.textContent = 'Device width : ' + width;
+
+  onBlogClicked('git');
+};
+
+function onResized() {
+  var width = window.innerWidth;
+  var deviceWidthTxt = document.getElementById('device-width');
+  deviceWidthTxt.textContent = 'Device width : ' + width;
+}
+ 
+ function onBlogClicked(linkTitle) {
+   console.log('clokeck : ' + linkTitle);
+   var linkList = document.getElementById('blog-link-ul');
+
+  linkList.innerHTML = '';
+
+  var dataList = getBlogList(linkTitle);
+  for(var i=0; i < dataList.length; i++) {
+    var txt = document.createTextNode(dataList[i].title);
+    var link = dataList[i].link;
+
+    var li = document.createElement("li");
+    var aTag = document.createElement('a');
+    aTag.appendChild(txt);
+    aTag.setAttribute('href', link);
+    li.appendChild(aTag);
+
+    linkList.appendChild(li);
+  }  
+ }
+
+function getBlogList(sort) {
+  switch(sort)
+  {
+    case 'git':
+    return [{title : 'Git commands', link : 'Pages/gitcommands.html'}];
+
+    case 'nodejs':
+    return [
+      {title : 'Node.js crash', link : 'Pages/nodejs.html'}, 
+      {title : 'NPM crash', link : 'Pages/npm.html'}
+    ];
+    
+    case 'webdev':
+    return [
+      {title : 'WebPack crash', link : 'Pages/webpack.html'}
+    ];
+
+    case 'dotnetcore':
+    return [{title : '', link : ''}];
+  }
+}
+</script>
 </html>
 
 
